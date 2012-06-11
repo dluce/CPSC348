@@ -1,0 +1,11 @@
+Notes on the project:
+	- one table for each location, rows in the table are time slots and the 
+		information associated with those time slots
+	- site will be a lottery system sell cookies between 9AM and 7PM (5 
+						two-hour blocks)
+	- submit a form and then get an email with a schedule later
+	- think it should a be scheduling system
+	- CANDYLAND
+	- dont have the info on the locations, make stuff up,
+	- should have a login so they can change and cancel time slot reservations
+	- first-come-first-serve basis

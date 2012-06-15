@@ -68,17 +68,18 @@
         	<p>&nbsp;</p>
        	  	<form id="myForm" method="post" action="">
 		<p>
-		Name: <input type="text"id="name" name="name" maxlength="38"> </input><br /><br />
-		Phone #: <input type="text"id="phone1" size="3" maxlength="3" />-<input type="text"id="phone2" size="3" maxlength="3" />-<input type="text"id="phone3" size="3" maxlength="4" /> <br /><br />
+		Name: <input type="text" id="name" name="name" maxlength="38"> </input><br /><br />
+		Phone #: <input type="text" id="phone1" size="3" maxlength="3" />-<input type="text" id="phone2" size="3" maxlength="3" />-<input type="text" id="phone3" size="3" maxlength="4" /> <br /><br />
 		Troop Number: <input type="text" id="troop" size="3" maxlength="4" />
 		<br />
 		<br />
 		Username:<input type="text"id="user" maxlength="14" />
-		E-Mail: <input type="text" size="15" id="email" /> <br /><br />
+		E-Mail: <input type="text" size="15" maxlength="35" id="email" /> <br /><br />
 		Password:<input type="password" id="pass1" maxlength="22"> </input><br /><br />
 		Re-type Password:<input type="password" id="pass2" maxlength="22" /><br /><br />
-		<button "submit" onclick="buttonHandler()" > Register Now </button>	
-		</form>
+		<input type="submit" onclick="buttonHandler()" value="Register Now" />
+		</form>		<!--
+		<button type="submit" onclick="buttonHandler()"> Register Now </button>	   -->
 	<script type="text/javascript" src="register.js"> </script>
 	<p>&nbsp;</p>
         </div>
@@ -95,6 +96,5 @@
 			</div>
       </div>
    </div>
-	<script type="text/javascript" src="register.js"> </script>
 </body>
 </html>

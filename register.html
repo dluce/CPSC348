@@ -3,8 +3,8 @@
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<script type="text/javascript" src="register.js"> </script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="registerHandler.js"> </script>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<link rel="shortcut icon" href="images/favicon.ico" />
 	<title>Fredericksburg Sign-Up (Girls Scouts)</title>
@@ -66,20 +66,20 @@
         	<h3> NOTE: Only register if you are a scout master. Only one person may register per troop! </h3>
 		<p>&nbsp;</p>
         	<p>&nbsp;</p>
-       	  	<form method="post" action="login.php">
+       	  	<form id="myForm" method="post" action="">
 		<p>
 		Name: <input type="text"id="name" name="name" maxlength="38"> </input><br /><br />
 		Phone #: <input type="text"id="phone1" size="3" maxlength="3" />-<input type="text"id="phone2" size="3" maxlength="3" />-<input type="text"id="phone3" size="3" maxlength="4" /> <br /><br />
-		Troop Number: <input type="text"id="troop" maxlength="4" />
+		Troop Number: <input type="text" id="troop" size="3" maxlength="4" />
 		<br />
 		<br />
-		Username:<input type="text"id="user" maxlength="18" />
+		Username:<input type="text"id="user" maxlength="14" />
 		E-Mail: <input type="text" size="15" id="email" /> <br /><br />
-		Password:<input type="password" id="password1" maxlength="22"> </input><br /><br />
-		Re-type Password:<input type="password" id="password2" maxlength="22" /><br /><br />
-		<button type="submit"> Register Now </button>	
-	
+		Password:<input type="password" id="pass1" maxlength="22"> </input><br /><br />
+		Re-type Password:<input type="password" id="pass2" maxlength="22" /><br /><br />
+		<button "submit" onclick="buttonHandler()" > Register Now </button>	
 		</form>
+	<script type="text/javascript" src="register.js"> </script>
 	<p>&nbsp;</p>
         </div>
         <div id="content_bottom"></div>
@@ -95,5 +95,6 @@
 			</div>
       </div>
    </div>
+	<script type="text/javascript" src="register.js"> </script>
 </body>
 </html>

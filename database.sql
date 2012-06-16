@@ -2,8 +2,10 @@
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
-	troupe_number INTEGER(7) PRIMARY KEY NOT NULL,
+	troop_number INTEGER(7) PRIMARY KEY NOT NULL,
 	scout_master_name VARCHAR(50) NOT NULL,
+	phone VARCHAR(15) NOT NULL,
+	email VARCHAR(30) NOT NULL,
 	username VARCHAR(30) NOT NULL,
 	password VARCHAR(40) NOT NULL
 );

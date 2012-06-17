@@ -22,7 +22,7 @@
 		<?php
 		while ($row = mysql_fetch_array($result)){
 			//fill the table
-			echo "  <tr><th rowspan=\"5\">". $row['day'] ."</th>";
+			echo "  <tr><th rowspan=\"6\">". $row['day'] ."</th>";
 			for ($i = 1; $i < 6; $i++){
 				echo " <tr><td>$counter" . ":00" . "$zone</td> ";
 				

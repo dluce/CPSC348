@@ -1,5 +1,8 @@
 <?php
 	//htmlfooter.php: footer used on every page in the site
+	// Note: ONLY include this file if it will be the last parts of html 
+	//to display on the page.
+	
 	echo " </div>"; //this line ends the content_main div from htmlheader.php
 	
 	//puts in the rest of the stuff for the bottom of the page,

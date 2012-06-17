@@ -27,7 +27,6 @@ CREATE TABLE times(
 	time3 BOOLEAN DEFAULT 0,
 	time4 BOOLEAN DEFAULT 0,
 	time5 BOOLEAN DEFAULT 0,
-	time6 BOOLEAN DEFAULT 0,
 	CONSTRAINT locations_id_fk
 	FOREIGN KEY (location_id)
 	REFERENCES locations(id)

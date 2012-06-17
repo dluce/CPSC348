@@ -1,18 +1,9 @@
 <!--	registerScript.php	-->
 <?php
 	include ('htmlheader.php');
-	include('mydbinfo.php');
-	$con = @mysql_connect($dbhost,$dbuser,$dbpass);
-	if(!$con) {
-		die ("<p> Unable to connect to the database system.<br />" .
-			"Please try again later. </p></body></html>");
-		exit();
-	}
-	if (! @mysql_select_db($dbname) ) {
-		echo ("<p> Unable to connect to the database.<br />" . 
-			"Please try again later. </p></body></html>");
-		exit();
-	}
+	include('db_connect.php'); //db_connect has all the stuff for
+			//connection error messages
+	
 	//check to see if any of the fields are empty.
 	//if not, then continue processing request
 	if (empty($_POST['name'] && 
@@ -23,7 +14,8 @@
 			$_POST['pass1'] && 
 			$_POST['pass2'])) {
 		echo ("<p> All information is required. Please check and make 
-			sure you enter your info! </p></body></html>");
+			sure you enter your info! </p>");
+		include ('htmlfooter.php');
 		exit();
 	} 
 	else {
@@ -43,7 +35,8 @@
 		if($row = mysql_fetch_array($result)) {
 			echo ("<p> I'm sorry, but your troop has already registered. 
 				Troop number ". $troop . " is registered with the 
-				Scoutmaster " . $name . ".</p></body></html>");
+				Scoutmaster " . $name . ".</p>");
+			include ('htmlfooter.php');
 			exit();
 		} 
 		//if that checks out, then check to see if the username has 
@@ -57,7 +50,8 @@
 			
 			if ($row = mysql_fetch_array($result)) {
 				echo ("<p> The username you entered is alredy being used.<br /><br />" . 
-					"Please select a different one. </p></body></html>");
+					"Please select a different one. </p>");
+				include ('htmlfooter.php');
 				exit();
 			} 
 			//finally, if troop number and username check out, register
@@ -68,16 +62,19 @@
 							phone, email, username, password)" .
 							"VALUES ('$troop', '$name', 
 							'$phone', '$email', '$user', 
-							'$pass')";
+							SHA('$pass'))"; // the SHA function hashes the password
+											//into a 40-character string.
 					$result = mysql_query($query) or die (mysql_error());
 					echo ("You are now registered to use the site. 
 							Please remember your UN and Password.");
 				} else {
 					echo ("<p> Your password entries do not match.<br />" .
-						"Please re-type your password, and then double check. </p></body></html>");
+						"Please re-type your password, and then double check. </p>");
+					include ('htmlfooter.php');
 					exit();
 				}
 			}
 		}
 	}
+	include ('htmlfooter.php');
 ?>

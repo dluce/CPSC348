@@ -40,12 +40,32 @@
 	echo "				<h3>Locations</h3>";
 							
 	echo "				<ul>";
-	echo "					<li><a href=\"#\">List</a></li>";
-	echo "					<li><a href=\"#\">of</a></li>";
-	echo "					<li><a href=\"#\">Locations</a></li>";
-	echo "					<li><a href=\"#\">Goes</a></li>";
-	echo "					<li><a href=\"#\">Here</a></li>";
-	echo "					<li><a href=\"#\">(brings up schedules for each location)</a></li>";
+	
+	//get all the locations and display them on a sidebar;
+	//this enables users to add locations if they want to
+	include ('db_connect.php');
+	$query = "SELECT name FROM locations"; //grab every name
+	
+	$result = mysql_query($query) or die (mysql_error());
+	while($row = mysql_fetch_array($result){
+		$name = $row['name'];
+		//locations.php will use the 'name' post variable
+		//to query the db based on what location name 
+		//is clicked, eliminating the need for multiple files
+		//for multiple locations
+		echo "<form method=\"post\" action=\"locations.php\" ";
+		echo "	<input type=\"hidden\" name=\"$name\" value=\"$name\" /> ";
+		echo "	<li><a href=\"locations.php\">$name</a></li>";
+		echo "</form>";
+	
+	}
+	
+//	echo "					<li><a href=\"#\">List</a></li>";
+//	echo "					<li><a href=\"#\">of</a></li>";
+//	echo "					<li><a href=\"#\">Locations</a></li>";
+//	echo "					<li><a href=\"#\">Goes</a></li>";
+//	echo "					<li><a href=\"#\">Here</a></li>";
+//	echo "					<li><a href=\"#\">(brings up schedules for each location)</a></li>";
 
 	echo "				</ul>";
 	echo "</div>";

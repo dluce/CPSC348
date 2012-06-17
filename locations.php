@@ -32,7 +32,8 @@
 					echo "<td><em>Block already taken</em></td></tr>";
 				}
 				else{
-					echo "<td><a href=\"take_spot.php\">Sign Up</a></td></tr>";
+					echo "<td><a href=\"take_spot.php?spot=$i&day=" .
+						$row['day'] . "\">Sign Up</a></td></tr>";
 				}
 				//increment coutner to get the different times
 				$counter += 2;

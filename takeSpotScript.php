@@ -4,9 +4,8 @@
 	include ('db_connect.php');
 	//contains all information for connecting to the database
 	//including error messages
-	
-	if ( empty($_POST['troop']) && empty($_POST['phone']) 
-		&& empty($_POST['name']) && empty($_POST['password'])) {
+	if ( empty($_POST['troop']) || empty($_POST['phone']) 
+		|| empty($_POST['name']) || empty($_POST['password'])) {
 		
 		echo "<p> All information is required! <br />
 				Back up and try again.</p>";
@@ -26,6 +25,16 @@
 			$day = $_POST['day'];
 			$location = $_GET['location'];
 			
+			$reserve = $_SESSION['reserve'];
+			if ($reserve){
+				echo "<h2>You have already reserved a spot for this week. <br />
+				Only one spot per troop is allowed per week. You may <br />
+				drop your current spot automatically by clicking <a href=\"drop_time.php\">here</a><br />
+				and then sign up for a different one.</p>";
+				include ('htmlfooter.php');
+				exit();
+			}
+			
 			//parse out the slot(x) number to add the troop
 			//to the corresponding troop_number(x) column.
 			$troop_take = "troop_number" . substr($spot, 4);
@@ -43,9 +52,12 @@
 			$result = mysql_query($query);
 			if ($result) {
 				//set the current_time_slot for the user who reserved it
-				$query = "UPDATE users SET current_time_slot = 
-				echo "You have successfully reserved the timeslot.";
+				$query = "UPDATE users SET current_time_slot = 1";
 				
+				$result = mysql_query($query) or die (mysql_error());
+				if($result){
+					echo "You have successfully reserved the timeslot.";
+				}
 			}
 		}
 			

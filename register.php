@@ -9,7 +9,7 @@
        	<form name="myForm" method="post" action="registerScript.php">
 			<p>
 				Name: <input type="text" name="name" maxlength="38" /><br /> <br />
-				Phone #:<input type="integer" name="phone" size="10" maxlength="10" /> <br />
+				Phone #:<input type="integer" name="phone" size="10" maxlength="10" /> <br /> <br />
 				Troop Number: <input type="text" name="troop" size="3" maxlength="4" /> <br /> <br />
 				Username:<input type="text" name="user" maxlength="14" />
 				E-Mail: <input type="text" size="15" maxlength="35" name="email" /> <br /><br />

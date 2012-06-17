@@ -24,9 +24,9 @@
 		
 	echo "		<div id=\"menu\">";
 	echo "			<ul>";
-	echo "				<li class=\"menuitem\"><a href=\"index.html\">Home</a></li>";
-	echo "				<li class=\"menuitem\"><a href=\"#\">Login</a></li> ";
-	echo "				<li class=\"menuitem\"><a href=\"register.html\">Sign-Up Sheet</a></li>";
+	echo "				<li class=\"menuitem\"><a href=\"index.php\">Home</a></li>";
+	echo "				<li class=\"menuitem\"><a href=\"login.php\">Login</a></li> ";
+	echo "				<li class=\"menuitem\"><a href=\"register.php\">Sign-Up Sheet</a></li>";
 	echo "				<li class=\"menuitem\"><a href=\"http://www.girlscouts.org\">Girl Scouts</a></li>";
 	echo "			</ul>";
 	echo "		</div>";

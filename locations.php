@@ -34,11 +34,17 @@
 				else{
 					//use the $_GET array to pass specific time slots
 					//to the handler script
+					
+					//decrement $i to get the right number
+					//in the output
+					$i--;
 					echo "<td><a href=\"take_spot.php?
-						    spot=time" . $i-1 
+						    spot=time" . $i 
 						. "&day=" . $row['day_of'] 
 						. "&location=" . $row['day_of']
 						. "\">Sign Up</a></td></tr>";
+					//re-increment i so nothing bombs
+					$i++;
 				}
 				//increment counter to get the different times
 				$counter += 2;

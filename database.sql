@@ -27,10 +27,16 @@ CREATE TABLE times(
 	time3 BOOLEAN DEFAULT 0,
 	time4 BOOLEAN DEFAULT 0,
 	time5 BOOLEAN DEFAULT 0,
+	troop_number1 INTEGER(7),
+	troop_number2 INTEGER(7),
+	troop_number3 INTEGER(7),
+	troop_number4 INTEGER(7),
+	troop_number5 INTEGER(7),
 	CONSTRAINT locations_id_fk
 	FOREIGN KEY (location_id)
 	REFERENCES locations(id)
 );
+
 
 /* puts the locations into the 'locations' table */
 INSERT INTO locations (name) VALUES ('Candyland');
@@ -42,13 +48,13 @@ INSERT INTO locations (name) VALUES ('1701 College Avenue');
 
 /*initializes the 'times' table to have all parts of the schedule free */
 /* in all locations, and two days for each location. */
-INSERT INTO times VALUES (1, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (2, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (3, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (4, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (5, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (1, 'Sunday', 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (2, 'Sunday', 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (3, 'Sunday', 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (4, 'Sunday', 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (5, 'Sunday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (1, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (2, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (3, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (4, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (5, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (1, 'Sunday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (2, 'Sunday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (3, 'Sunday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (4, 'Sunday', 0, 0, 0, 0, 0);
+INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (5, 'Sunday', 0, 0, 0, 0, 0);

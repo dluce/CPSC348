@@ -4,8 +4,7 @@
 	if(isset($_GET['location'])){
 		$location = $_GET['location'];
 		echo "<h2>Viewing Schedule For Location: $location </h2><br />";
-		$query = "SELECT t.day_of AS day, t.time1, t.time2, t.time3, t.time4, 
-			t.time5
+		$query = "SELECT t.*
 			FROM times AS t
 			INNER JOIN locations AS l
 			ON l.id = t.location_id
@@ -17,23 +16,24 @@
 		$zone = "AM";
 		
 		//start the table ?>
-		<table border="1">
+		<table id="locations">
 		<tr><th>Day</th><th colspan="2">Time</th></tr>
 		<?php
 		while ($row = mysql_fetch_array($result)){
 			//fill the table
-			echo "  <tr><th rowspan=\"6\">". $row['day'] ."</th></tr>";
-			for ($i = 1; $i < 6; $i++){
+			echo "  <tr><th rowspan=\"6\">". $row['day_of'] ."</th></tr>";
+			for ($i = 2; $i < 7; $i++){
 				echo " <tr><td>$counter" . ":00" . "$zone</td> ";
 				
 				//utilizes the php array implementation to
 				//iterate through the boolean results
 				if($row[$i]){
-					echo "<td><em>Block already taken</em></td></tr>";
+					echo "<td><em>Block already taken by:</em><br />
+						Troop " . $row[$i+5] . "</td></tr>";
 				}
 				else{
 					echo "<td><a href=\"take_spot.php?spot=$i&day=" .
-						$row['day'] . "\">Sign Up</a></td></tr>";
+						$row['day_of'] . "\">Sign Up</a></td></tr>";
 				}
 				//increment coutner to get the different times
 				$counter += 2;

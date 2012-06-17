@@ -7,7 +7,7 @@
 	$p = $_POST['password'];
 		
 	$query = "SELECT * FROM users WHERE username='$u' AND password=SHA('$p')";
-	$result = mysql_query($db,$query);
+	$result = mysql_query($query);
 	if($row = mysql_fetch_array($result))
 	{
 		$_SESSION['username'] = $u;
@@ -27,4 +27,5 @@
 			Make sure you entered your username and password correctly, <br />
 			or sign up <a href=\"register.php\" >here.</a> ";
 	}
+	include ('htmlfooter.php');
 ?>

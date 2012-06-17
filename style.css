@@ -58,8 +58,9 @@ width:400px;
 
 /* added by David Luce */
 #header h3 {
-	position:absolute;
-	text-align:right;
+position:absolute;
+left:800px;
+top:-70px;
 }
 
 #mainpic

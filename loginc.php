@@ -13,6 +13,10 @@
 		$_SESSION['username'] = $u;
 		$_SESSION['realname'] = $row['scout_master_name'];
 		$_SESSION['troop'] = $row['troop_number'];
+		$_SESSION['phone'] = $row['phone'];
+		//saves sha'd password to a session variable for later comparison
+		$_SESSION['pass'] = sha1($p);
+		
 		echo "<p><h2>Successful Login.</h2> <br />
 			You may now: <br />
 			<ul>

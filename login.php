@@ -10,7 +10,7 @@
 	<form method="post" action="lostPassword.php">
 		<p> If you forgot your password, put your Username and E-mail that
 			you registered with here, and your password will be sent.
-			Please remeber your password, and delete that e-mail after you read it. </p>
+			Please remember your password, and delete that e-mail after you read it. </p>
 		Username: <input type="text" name="username" /><br /><br />
 		E-mail: <input type="text" name="email" /><br /><br />
 	</form>

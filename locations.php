@@ -32,10 +32,13 @@
 						Troop " . $row[$i+5] . "</td></tr>";
 				}
 				else{
-					echo "<td><a href=\"take_spot.php?spot=$i&day=" .
+					//use the $_GET array to pass specific time slots
+					//to the handler script
+					echo "<td><a href=\"take_spot.php?
+							spot=time" . $i-1 . "&day=" .
 						$row['day_of'] . "\">Sign Up</a></td></tr>";
 				}
-				//increment coutner to get the different times
+				//increment counter to get the different times
 				$counter += 2;
 				if($counter > 12){
 					$counter = 1;

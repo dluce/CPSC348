@@ -8,37 +8,36 @@
 	if ( empty($_POST['troop']) && empty($_POST['phone']) 
 		&& empty($_POST['name']) && empty($_POST['password'])) {
 		
-		echo "<p> All information is required! </p>"
-		include ('htmlfooter');
+		echo "<p> All information is required! <br />
+				Back up and try again.</p>";
+		include ('htmlfooter.php');
 		exit();
 	}
 	else {
 		$name = $_POST['name'];
 		$troop = $_POST['troop'];
 		$phone = $_POST['phone'];
-		$password = $_POST['password'];
+		$password = sha1($_POST['password']);
 
-		$Sname = $_SESSION['name'];
-		$Stroop = $_SESSION['troop'];
-		$Sphone = $_SESSION['phone'];
-		$Spassword = $_SESSION['pass'];
+		//check to see if user is logged in
+		if(isset($_SESSION['realname'])){
+			//if they are, continue
+			$spot = $_POST['spot'];
+			$day = $_POST['day'];
+			
+			//parse out the slot(x) number to add the troop
+			//to the corresponding troop_number(x) column.
+			$troop_take = "troop_number" . substr($spot, 4);
+			echo "$troop_take";
+			
+			//check to see if everything matches up
+			if ($name==$_SESSION['username'] 
+			&& $troop==$_SESSION['troop'] 
+			&& $phone==$_SESSION['phone']
+			&& $password==$_SESSION['pass']) {
 
-		$time1 = $_GET['time1'];
-		$time2 = $_GET['time2'];
-		$time3 = $_GET['time3'];
-		$time4 = $_GET['time4'];
-		$time5 = $_GET['time5'];
-		$troop1 = $_GET['troop_number1'];
-		$troop2 = $_GET['troop_number2'];
-		$troop3 = $_GET['troop_number3'];
-		$troop4 = $_GET['troop_number4'];
-		$troop5 = $_GET['troop_number5'];
-
-		if ($name==$Sname && $troop==$Stroop && $phone==$Sphone 
-			&& $password==$Spassword) {
-
-			$query = "SELECT * FROM times WHERE
-				 "
+			$query = "UPDATE times AS t SET t.$slot, t.$troop_take
+					WHERE "
 			$result = mysql_query($query);
 			if ($row= mysql_fetch_array($array)) {
 				$query = "INERT INTO locations
@@ -49,6 +48,16 @@
 					echo "You have successfully reserved the timeslot.";
 				}
 			}
+		}
+			
+		}
+		//if they're not logged in, quit out
+		else{
+			echo "<p>You must be logged in to claim a cookie booth. <br>
+				Either register <a href=\"register.php\">here</a> or 
+				login <a href=\"login.php\">here</a> to do so.</p>";
+			include('htmlfooter.php');
+			exit();
 		}
 	}
 ?>

@@ -7,7 +7,8 @@ CREATE TABLE users (
 	phone VARCHAR(15) NOT NULL,
 	email VARCHAR(30) NOT NULL,
 	username VARCHAR(30) NOT NULL,
-	password VARCHAR(40) NOT NULL
+	password VARCHAR(40) NOT NULL,
+	current_time_slot VARCHAR(40)
 );
 
 DROP TABLE IF EXISTS locations;

@@ -18,6 +18,7 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 			size="3" maxlength="4" /><br /><br />
 		Password: <input type="password" name="password" 
 			maxlength="22" />	
+		<input type="submit" value="Submit" />
 	</form>
 	<p> PLEASE use the SAME information you used to register,
 		 or you will not be allowed to obtain the time slot. </p>

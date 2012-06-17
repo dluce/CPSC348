@@ -4,7 +4,7 @@ Contains the example user information for the website.
 
 Name: Peter Moerman
 Phone: 123-456-7890
-Email: 123@icancount.com
+Email: pmoerman@mail.umw.edu
 Troop Number: 0000
 Username: username
 Password: password

@@ -17,7 +17,7 @@
 		$zone = "AM";
 		
 		//start the table ?>
-		<table>
+		<table border="1">
 		<tr><th>Day</th><th colspan="2">Time</th></tr>
 		<?php
 		while ($row = mysql_fetch_array($result)){

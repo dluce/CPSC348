@@ -17,7 +17,7 @@
 				Re-type Password:<input type="password" name="pass2" maxlength="22" /><br /><br />
 			</p>
 		</form>	
-		<button type="submit" onclick="registerScript.php"> Register Now </button>	
+		<input type="submit" name="submit" value="Register Now" /> Register Now </button>	
 	<p>&nbsp;</p>
 <?php
 	include ('htmlfooter.php');

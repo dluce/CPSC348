@@ -20,10 +20,6 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 		Troop Number: <input type="text" name="troop" 
 			size="3" maxlength="4" /><br /><br />
 		Password: <input type="password" name="password" 
-<<<<<<< HEAD
-			maxlength="22" />	
-		<input type="submit" value="Submit" />
-=======
 			maxlength="22" />
 		<input type="hidden" name = "spot" 
 			value="<?php echo "$spot"; ?>" />
@@ -31,7 +27,6 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 			value="<?php echo "$day"; ?>" />
 		<input type="hidden" name = "location_id" 
 			value="<?php echo "$location"; ?>" />
->>>>>>> bf4798d44edd88f3af80bccc517acc661aa991cf
 	</form>
 	<p> PLEASE use the SAME information you used to register,
 		 or you will not be allowed to obtain the time slot. </p>

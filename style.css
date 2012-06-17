@@ -199,6 +199,7 @@ padding-left:15px;
 padding-right:15px;
 }
 
+/* Table display alterations */
 #locations table
 {
 width:100%
@@ -214,9 +215,8 @@ vertical-align:middle;
 font-size:1.5em;
 border:1px solid #98bf21;
 }
+/* added by David Luce, taken from w3schools */
 
-#locations th, #locations td
-{}
 #content_bottom
 {
 background-image:url(images/main_bottom.png);

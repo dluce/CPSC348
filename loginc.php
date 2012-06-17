@@ -17,6 +17,8 @@
 		//saves sha'd password to a session variable for later comparison
 		$_SESSION['pass'] = sha1($p);
 		
+		$_SESSION['reserve'] = $row['current_time_slot'];
+		
 		echo "<p><h2>Successful Login.</h2> <br />
 			You may now: <br />
 			<ul>

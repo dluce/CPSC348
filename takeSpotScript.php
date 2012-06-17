@@ -42,6 +42,8 @@
 					"WHERE location_id = '$location' AND day_of = '$day'"
 			$result = mysql_query($query);
 			if ($result) {
+				//set the current_time_slot for the user who reserved it
+				$query = "UPDATE users SET current_time_slot = 
 				echo "You have successfully reserved the timeslot.";
 				
 			}

@@ -23,14 +23,22 @@
 		$Sphone = $_SESSION['phone'];
 		$Spassword = $_SESSION['pass'];
 
-		$spot = $_GET['spot'];
-		$day = $_GET['day'];
+		$time1 = $_GET['time1'];
+		$time2 = $_GET['time2'];
+		$time3 = $_GET['time3'];
+		$time4 = $_GET['time4'];
+		$time5 = $_GET['time5'];
+		$troop1 = $_GET['troop_number1'];
+		$troop2 = $_GET['troop_number2'];
+		$troop3 = $_GET['troop_number3'];
+		$troop4 = $_GET['troop_number4'];
+		$troop5 = $_GET['troop_number5'];
 
 		if ($name==$Sname && $troop==$Stroop && $phone==$Sphone 
 			&& $password==$Spassword) {
 
-			$query = "SELECT * FROM locations WHERE
-				 spot='$spot',day='$day'"
+			$query = "SELECT * FROM times WHERE
+				 "
 			$result = mysql_query($query);
 			if ($row= mysql_fetch_array($array)) {
 				$query = "INERT INTO locations

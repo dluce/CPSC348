@@ -3,7 +3,7 @@
 	include ('htmlheader.php');
 	include('db_connect.php'); //db_connect has all the stuff for
 			//connection error messages
-	
+
 	//check to see if any of the fields are empty.
 	//if not, then continue processing request
 	if (empty($_POST['name']) && 

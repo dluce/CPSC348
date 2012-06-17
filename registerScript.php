@@ -6,13 +6,13 @@
 	
 	//check to see if any of the fields are empty.
 	//if not, then continue processing request
-	if (empty($_POST['name'] && 
-			$_POST['phone'] && 
-			$_POST['troop'] && 
-			$_POST['email'] && 
-			$_POST['user'] && 
-			$_POST['pass1'] && 
-			$_POST['pass2'])) {
+	if (empty($_POST['name']) && 
+		empty($_POST['phone']) && 
+		empty($_POST['troop']) && 
+		empty($_POST['email']) && 
+		empty($_POST['user']) && 
+		empty($_POST['pass1']) && 
+		empty($_POST['pass2'])) {
 		echo ("<p> All information is required. Please check and make 
 			sure you enter your info! </p>");
 		include ('htmlfooter.php');
@@ -66,7 +66,7 @@
 											//into a 40-character string.
 					$result = mysql_query($query) or die (mysql_error());
 					echo ("You are now registered to use the site. 
-							Please remember your UN and Password.");
+							Please remember your Username and Password.");
 				} else {
 					echo ("<p> Your password entries do not match.<br />" .
 						"Please re-type your password, and then double check. </p>");

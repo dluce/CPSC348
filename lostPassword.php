@@ -34,7 +34,8 @@
 		}
 
 	} else {
-		echo "We did not find anyone registered with that Username and email.<br /><br /> Please try again!";
+		echo "We did not find anyone registered with that Username 
+			and email.<br /><br /> Please try again!";
 		include ('htmlfooter');
 		exit();
 	}

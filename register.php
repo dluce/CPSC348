@@ -2,8 +2,9 @@
 	include ('htmlheader.php');
 ?>
 
-    <h2> Scoutmaster Sign-up Form </h2>
-    <h3> NOTE: Only register if you are a scout master. Only one person may register per troop! </h3>
+    <h2> Leader Sign-up Form </h2>
+    <h3> NOTE: Only register if you are a scout leader. 
+		Only one person may register per troop! </h3>
 	<p>&nbsp;</p>
     <p>&nbsp;</p>
        	<form id="myForm" method="post" action="registerScript.php">

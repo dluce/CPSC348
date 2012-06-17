@@ -62,6 +62,12 @@ position:absolute;
 left:800px;
 top:-70px;
 }
+
+#small 
+{
+height:50%;
+width:50%;
+}
 /* end added code */
 
 #mainpic

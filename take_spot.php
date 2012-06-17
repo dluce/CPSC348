@@ -9,8 +9,8 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 ?>
 
 	<h2> Time Slot Verification </h2>
-	<h3> Please enter the information below to verify you 
-		are the registered person, and confirm the time slot. </h3>
+	<h3> Please enter the information below to verify you are registered 
+		and logged in, and confirm the time slot. </h3>
 	<form id="myform" method="post" action="takeSpotScript.php">
 
 		User Name: <input type="text" name="name"

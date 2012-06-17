@@ -21,24 +21,22 @@
 	echo "<div id=\"container\">";
 	echo "		<div id=\"header\">";
 	echo "			<h1>Fredericksburg, <span class=\"off\">VA</span></h1>";
-	echo "			<h2>Girl Scout Cookie Booth Locations</h2><br />";
-	
-	//session header if someone is logged in
-	if(isset($_SESSION['username'])){
-		echo "<h3>Current User: " . $_SESSION['realname'] . "</h3>";
-	}
+	echo "			<h2>Girl Scout Cookie Booth Locations</h2>";
 	
 	echo "		</div>   ";
 		
 	echo "		<div id=\"menu\">";
 	echo "			<ul>";
 	echo "				<li class=\"menuitem\"><a href=\"index.php\">Home</a></li>";
-	echo "				<li class=\"menuitem\"><a href=\"login.php\">Login</a></li> ";
 	echo "				<li class=\"menuitem\"><a href=\"register.php\">Sign-Up Sheet</a></li>";
 	echo "				<li class=\"menuitem\"><a href=\"http://www.girlscouts.org\">Girl Scouts</a></li>";
 	
+	//show a login or logout button as appropriate
 	if(isset($_SESSION['username'])){
-		echo "<li class=\"menuitem\"><a href=\"logout.php\">Log Out</a></li> ";
+		echo "			<li class=\"menuitem\"><a href=\"logout.php\">Log Out</a></li> ";
+	}
+	else{
+		echo "			<li class=\"menuitem\"><a href=\"login.php\">Login</a></li> ";
 	}
 	
 	echo "			</ul>";
@@ -54,8 +52,9 @@
 							
 	echo "				<ul>";
 	
-	//get all the locations and display them on a sidebar;
-	//this enables users to add locations if they want to
+	//get all the locations in the db and display them on the sidebar;
+	//this enables users to add locations if they want to and not
+	//need to re-code this file
 	include ('db_connect.php');
 	$query = "SELECT name FROM locations"; //grab every name
 	
@@ -83,4 +82,9 @@
 			
 	echo "		<div id=\"content_top\"></div>";
 	echo "		<div id=\"content_main\">";
+	
+	//session header if someone is logged in
+	if(isset($_SESSION['username'])){
+		echo "		<h3>Current User: " . $_SESSION['realname'] . "</h3>";
+	}
 ?>

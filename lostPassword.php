@@ -30,6 +30,9 @@
 			$result = mysql_query($query);
 			if($result){
 				echo "<p>Password updated successfully.</p>";
+				echo '<p>Click here to login -->: <a href="login.php"> Log In! </a></p>';
+				include ('htmlfooter.php');
+				exit();
 			}
 		}
 
@@ -39,6 +42,5 @@
 		include ('htmlfooter');
 		exit();
 	}
-	
-	include ('htmlfooter');
+
 ?>

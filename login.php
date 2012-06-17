@@ -7,13 +7,13 @@
 		Password: <input type="password" id="password" name="password" /><br /><br />
 		<input type="submit" value="Login" name="submit" />
 	</form>
-	<form method="post" action="lostPassword.php">
-		<p> If you forgot your password, put your Username and E-mail that
-			you registered with here, and your password will be sent.
-			Please remember your password, and delete that e-mail after you read it. </p>
-		Username: <input type="text" name="username" /><br /><br />
-		E-mail: <input type="text" name="email" /><br /><br />
-	</form>
+	<br />
+	<br />
+	<br />
+	<p> Click the button below to reset your password in case you forgot it. <br /><br />
+		<a href="lostPassForm.php"><img src="http://www.wsalometutoring.com/images/forget_img.jpg" alt="Recover your password">
+			</img></a>
+	</p>		
 <?php
 	include ('htmlfooter.php');
 ?>

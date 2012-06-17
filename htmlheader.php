@@ -5,6 +5,8 @@
 	//	menu items, write any html you want to (it will all be enclosed
 	//	within the content_main div), and then include 'htmlfooter.php'
 	//	to finish the page. No other html writing is needed.
+	
+	session_start(); //need this on pretty much all pages
 	echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" 
 			\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">";
 	echo "<html xmlns=\"http://www.w3.org/1999/xhtml\">";
@@ -19,7 +21,13 @@
 	echo "<div id=\"container\">";
 	echo "		<div id=\"header\">";
 	echo "			<h1>Fredericksburg, <span class=\"off\">VA</span></h1>";
-	echo "			<h2>Girl Scout Cookie Booth Locations</h2>";
+	echo "			<h2>Girl Scout Cookie Booth Locations</h2><br />";
+	
+	//session header if someone is logged in
+	if(isset($_SESSION['username'])){
+		echo "<h3>Current User: " . $_SESSION['realname'] . "</h3>";
+	}
+	
 	echo "		</div>   ";
 		
 	echo "		<div id=\"menu\">";
@@ -28,6 +36,11 @@
 	echo "				<li class=\"menuitem\"><a href=\"login.php\">Login</a></li> ";
 	echo "				<li class=\"menuitem\"><a href=\"register.php\">Sign-Up Sheet</a></li>";
 	echo "				<li class=\"menuitem\"><a href=\"http://www.girlscouts.org\">Girl Scouts</a></li>";
+	
+	if(isset($_SESSION['username'])){
+		echo "<li class=\"menuitem\"><a href=\"logout.php\">Log Out</a></li> ";
+	}
+	
 	echo "			</ul>";
 	echo "		</div>";
 	

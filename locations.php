@@ -22,14 +22,14 @@
 		<?php
 		while ($row = mysql_fetch_array($result)){
 			//fill the table
-			echo "  <tr><th rowspan=\"6\">". $row['day'] ."</th>";
+			echo "  <tr><th rowspan=\"6\">". $row['day'] ."</th></tr>";
 			for ($i = 1; $i < 6; $i++){
 				echo " <tr><td>$counter" . ":00" . "$zone</td> ";
 				
 				//utilizes the php array implementation to
 				//iterate through the boolean results
 				if($row[$i]){
-					echo "<td><em>Time already taken</em></td></tr>";
+					echo "<td><em>Block already taken</em></td></tr>";
 				}
 				else{
 					echo "<td><a href=\"take_spot.php\">Sign Up</a></td></tr>";

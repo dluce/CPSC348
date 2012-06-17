@@ -53,7 +53,7 @@
 		//to query the db based on what location name 
 		//is clicked, eliminating the need for multiple files
 		//for multiple locations
-		echo "<form method=\"post\" action=\"locations.php\" ";
+		echo "<form method=\"post\" action=\"locations.php\" > ";
 		echo "	<input type=\"hidden\" name=\"$name\" value=\"$name\" /> ";
 		echo "	<li><a href=\"locations.php\">$name</a></li>";
 		echo "</form>";

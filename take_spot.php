@@ -5,6 +5,7 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 	include ('htmlheader.php');
 	$spot = $_GET['spot'];
 	$day = $_GET['day'];
+	$location = $_GET['location'];
 ?>
 
 	<h2> Time Slot Verification </h2>
@@ -24,6 +25,8 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 			value="<?php echo "$spot"; ?>" />
 		<input type="hidden" name="day" 
 			value="<?php echo "$day"; ?>" />
+		<input type="hidden" name = "location_id" 
+			value="<?php echo "$location"; ?>" />
 	</form>
 	<p> PLEASE use the SAME information you used to register,
 		 or you will not be allowed to obtain the time slot. </p>

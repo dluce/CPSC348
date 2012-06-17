@@ -24,6 +24,7 @@
 			//if they are, continue
 			$spot = $_POST['spot'];
 			$day = $_POST['day'];
+			$location = $_GET['location'];
 			
 			//parse out the slot(x) number to add the troop
 			//to the corresponding troop_number(x) column.
@@ -36,17 +37,13 @@
 			&& $phone==$_SESSION['phone']
 			&& $password==$_SESSION['pass']) {
 
-			$query = "UPDATE times AS t SET t.$slot, t.$troop_take
-					WHERE "
+			$query = "UPDATE times SET $spot=1, 
+						$troop_take = " . $_SESSION['troop'] .
+					"WHERE location_id = '$location' AND day_of = '$day'"
 			$result = mysql_query($query);
-			if ($row= mysql_fetch_array($array)) {
-				$query = "INERT INTO locations
-					 SET troop_id='$troop'
-					 WHERE '$spot'=spot, '$day'=day"
-				$result = mysql_query($query);
-				if ($row = mysql_fetch_array($result) {
-					echo "You have successfully reserved the timeslot.";
-				}
+			if ($result) {
+				echo "You have successfully reserved the timeslot.";
+				
 			}
 		}
 			

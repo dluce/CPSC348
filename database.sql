@@ -42,13 +42,13 @@ INSERT INTO locations (name) VALUES ('1701 College Avenue');
 
 /*initializes the 'times' table to have all parts of the schedule free */
 /* in all locations, and two days for each location. */
-INSERT INTO times VALUES (1, 'Saturday', 0, 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (2, 'Saturday', 0, 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (3, 'Saturday', 0, 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (4, 'Saturday', 0, 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (5, 'Saturday', 0, 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (1, 'Sunday', 0, 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (2, 'Sunday', 0, 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (3, 'Sunday', 0, 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (4, 'Sunday', 0, 0, 0, 0, 0, 0);
-INSERT INTO times VALUES (5, 'Sunday', 0, 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (1, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (2, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (3, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (4, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (5, 'Saturday', 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (1, 'Sunday', 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (2, 'Sunday', 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (3, 'Sunday', 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (4, 'Sunday', 0, 0, 0, 0, 0);
+INSERT INTO times VALUES (5, 'Sunday', 0, 0, 0, 0, 0);

@@ -1,7 +1,7 @@
 <?php
 	include ('htmlheader.php');
-	if(isset($_POST['name'])){
-		$location = $_POST['name'];
+	if(isset($_GET['location'])){
+		$location = $_GET['location'];
 		echo "$location";
 	}
 ?>

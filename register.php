@@ -15,9 +15,10 @@
 				Username:<input type="text" name="user" maxlength="14" /> <br /> <br />
 				Password:<input type="password" name="pass1" maxlength="22" /><br /><br />
 				Re-type Password:<input type="password" name="pass2" maxlength="22" /><br /><br />
+				<input type="submit" name="submit" value="Register Now" />
 			</p>
 		</form>	
-		<input type="submit" name="submit" value="Register Now" /> Register Now </button>	
+		
 	<p>&nbsp;</p>
 <?php
 	include ('htmlfooter.php');

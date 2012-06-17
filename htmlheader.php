@@ -47,7 +47,7 @@
 	$query = "SELECT name FROM locations"; //grab every name
 	
 	$result = mysql_query($query) or die (mysql_error());
-	while($row = mysql_fetch_array($result){
+	while($row = mysql_fetch_array($result)){
 		$name = $row['name'];
 		//locations.php will use the 'name' post variable
 		//to query the db based on what location name 

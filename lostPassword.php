@@ -18,7 +18,7 @@
 				AND phone='$phone'
 				AND email='$email' 
 				AND troop_number='$troop'";
-	$result = mysql_query($query);
+	$result = mysql_query($query) or die (mysql_error());
 	if ($row = mysql_fetch_array($result)) {
 		if ($pass==$check) {
 			$query = "UPDATE users SET password=SHA('$pass') 
@@ -29,8 +29,8 @@
 				AND troop_number='$troop'";
 			$result = mysql_query($query);
 			if($result){
-				echo "<p>Password updated successfully.</p>";
-				echo '<p>Click here to login -->: <a href="login.php"> Log In! </a></p>';
+				echo "<h2>Password updated successfully.</h2>";
+				echo "<p>Click here to login -->: <a href=\"login.php\"> Log In! </a></p>";
 				include ('htmlfooter.php');
 				exit();
 			}
@@ -39,7 +39,7 @@
 	} else {
 		echo "We did not find anyone registered with that Username 
 			and email.<br /><br /> Please try again!";
-		include ('htmlfooter');
+		include ('htmlfooter.php');
 		exit();
 	}
 

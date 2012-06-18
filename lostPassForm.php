@@ -9,6 +9,7 @@
 		Fill in your desired password, and REMEMBER IT! </p>
 
 	<form method="post" action="lostPassword.php">
+	<p>	
 		Troop Number: <input type="text" name="troop" size="2" maxlength="4" /><br /><br />
 		Name: <input type="text" name="name" size="23" maxlength="40"/><br /><br />
 		Phone Number: <input type="text" name="phone" size="9" maxlength="10" /><br /><br />
@@ -22,6 +23,7 @@
 		Re-Type it: <input type="password" name="checkpass" size="18" maxlength="22" />
 		<br /> <br />
 		<input type="submit" value="Set Password" />
+	</p>
 	</form>
 <?php
 	include ('htmlfooter.php');

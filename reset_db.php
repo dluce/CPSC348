@@ -2,10 +2,6 @@
 	include ('htmlheader.php');
 	
 	if(isset($_POST['submit'])){
-//		$query = "SELECT * FROM times";
-//		$result = mysql_query($query) or die (mysql_error());
-//		$num_rows = mysql_num_rows($result);
-//		for($num_rows; $num_rows > 0; $num_rows--){
 		for($i = 1; $i < 6; $i++){
 			//sets every part of the table except location and day to 0,
 			//which gets rid of any scheduling info but keeps locations

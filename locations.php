@@ -40,8 +40,8 @@
 					$i--;
 					echo "<td><a href=\"take_spot.php?
 						    spot=time" . $i 
-						. "&day=" . $row['day_of'] 
-						. "&location=" . $location
+						. "&amp;day=" . $row['day_of'] 
+						. "&amp;location=" . $location
 						. "\">Sign Up</a></td></tr>";
 					//re-increment i so nothing bombs
 					$i++;

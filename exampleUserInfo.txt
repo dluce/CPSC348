@@ -5,7 +5,7 @@ Contains the example user information for the website.
 Name: Joe Schmoe
 Phone: 123-456-7890
 Email: pmoerman@mail.umw.edu
-Troop Number: 0000
+Troop Number: 1000
 Username: username
 Password: password
 

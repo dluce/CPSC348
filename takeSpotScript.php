@@ -45,22 +45,26 @@
 			$troop = $_POST['troop'];
 			$phone = $_POST['phone'];
 			$password = sha1($_POST['password']);
+			
 			if ($name==$_SESSION['username'] 
 				&& $troop==$_SESSION['troop'] 
 				&& $phone==$_SESSION['phone']
 				&& $password==$_SESSION['pass']) {
-
-				$query = "UPDATE times SET $spot=1, 
-							$troop_take = '" . $_SESSION['troop'] .
-						"' WHERE location_id = '$location' AND day_of = '$day'";
+				
+				$troop_num = $_SESSION['troop'];
+				$query = "UPDATE times SET $spot = 1, 
+							$troop_take = '$troop_num' 
+							WHERE location_id = '$location' 
+							AND day_of = '$day'";
 				$result = mysql_query($query) or die (mysql_error());
 				if ($result) {
 					//set the current_time_slot for the user who reserved it
 					//allows for later dropping of the time slot by parsing
 					//the string
+					$username = $_SESSION['username'];
 					$query = "UPDATE users SET current_time_slot = 
 						'$spot,$troop_take,$location,$day' WHERE 
-						username = '" . $_SESSION['username'] . "'";
+						username = '$username'";
 					
 					$result = mysql_query($query) or die (mysql_error());
 					if($result){

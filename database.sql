@@ -39,7 +39,7 @@ CREATE TABLE times(
 );
 
 /*puts an admin account in the users table */
-INSERT INTO users VALUES (0, 'Administrator', '7033400810', 'dluce@mail.umw.edu', 
+INSERT INTO users VALUES ('0000', 'Administrator', '7033400810', 'dluce@mail.umw.edu', 
 	'admin', SHA('gurren5'), '');
 	
 /* puts the locations into the 'locations' table */

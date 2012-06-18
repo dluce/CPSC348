@@ -16,10 +16,15 @@
 	}
 	else {
 		
-
 		//check to see if user is logged in
 		if(isset($_SESSION['username'])){
-			//if they are, continue
+			//if they are, AND they aren't the Admin, continue
+			if ($_SESSION['username'] == "admin"){
+				echo "<h3>Admin account cannot sign up for a time 
+					slot.</h3>";
+				include ('htmlfooter.php');
+				exit();
+			}
 			$spot = $_POST['spot'];
 			$day = $_POST['day'];
 			$location = $_POST['location_id'];

@@ -10,3 +10,11 @@ Username: username
 Password: password
 
 Very creative, I know.
+
+Admin account:
+Name: Administrator
+Troop: 0000 (four zeroes)
+Phone: 703-340-0810
+Email: dluce@mail.umw.edu
+username: admin
+password: gurren5

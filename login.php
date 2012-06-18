@@ -33,8 +33,6 @@
 					<h3> You may now: </h3>
 					<p>
 					<ul>
-						<li>Sign Up for time slots in cookie booths.</li> <br />
-						<li>Edit your current time slot. </li> <br />
 						<li>Add locations to the database. </li> <br />
 						<li>Reset the necessary fields in the database
 							for schedule clearing</li> <br />

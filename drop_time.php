@@ -3,21 +3,23 @@
 	include ('db_connect.php');
 	
 	if (isset($_SESSION['username'])){
+		$user = $_SESSION['username'];
 		$query = "SELECT current_time_slot FROM users WHERE 
-			username=" . $_SESSION['username'];
+			username= '$user'";
 		
 		$result = mysql_query($query) or die (mysql_error());
 		if ($row = mysql_fetch_array($result)){
-			string $current = $row['current_time_slot'];
-			array $parse = explode("," , $current);
+			$current = $row['current_time_slot'];
+			$parse = explode("," , $current);
+			
 			$spot = $parse[0];
 			$troop_take = $parse[1];
 			$location = $parse[2];
 			$day = $parse[3];
 			
-			//destroy the set time slot in the 'times' table and free up
-			//the user's current_time_slot
-			$query = "UPDATE times SET $spot=0, $troop_take = 0
+			//destroy the set time slot in the 'times' table
+			//subquery needed to grab the location_id
+			$query = "UPDATE times SET $spot = 0, $troop_take = NULL
 				WHERE location_id = 
 					(SELECT id FROM locations WHERE name = '$location')
 				AND day_of = '$day'";
@@ -27,13 +29,15 @@
 			//the loss in spot reservation, and print out a success message
 			if($result){
 				$query = "UPDATE users SET current_time_slot = ''
-					WHERE username = " . $_SESSION['username'];
+					WHERE username = '$user'";
 				
 				$result = mysql_query($query) or die (mysql_error());
 				if($result){
 					echo "<p>You have successfully dropped your time slot. <br />
 						Feel free to choose another. </p>";
 				}
+				//If this happens, it is VERY BAD. Should NEVER happen.
+				//if it does, you will need to reset the database.
 				else{
 					echo "<p> We could not change the users table to reflect
 						the change in time slot. </p>";
@@ -50,6 +54,8 @@
 		echo "<p> You are not currently logged in. 
 			<a href=\"login.php\">Login</a> to <br />
 			drop your current time slot.</p>";
+		include('htmlfooter.php');
+		exit();
 	}
 	include ('htmlfooter.php');
 ?>

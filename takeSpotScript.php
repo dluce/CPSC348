@@ -1,6 +1,6 @@
 <?php
 	//This is the script file, used to verify the user's identity
-
+	session_start();
 	include ('db_connect.php');
 	//contains all information for connecting to the database
 	//including error messages

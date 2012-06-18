@@ -38,6 +38,9 @@
 	//show a login or logout button as appropriate
 	if(isset($_SESSION['username'])){
 		echo "			<li class=\"menuitem\"><a href=\"logout.php\">Log Out</a></li> ";
+		if($_SESSION['username'] == "admin"){
+			echo "<li class=\"menuitem\"><a href=\"reset_db.php\">Reset Schedule</a></li>";
+		}
 	}
 	else{
 		echo "			<li class=\"menuitem\"><a href=\"login.php\">Login</a></li> ";
@@ -91,51 +94,54 @@
 	if(isset($_SESSION['username'])){
 		echo "		<h3>Logged In As: " . $_SESSION['realname'] . "</h3>";
 		
-		$user = $_SESSION['username'];
-		$realn = $_SESSION['realname'];
-		
-		$query = "SELECT current_time_slot FROM users WHERE 
-				username = '$user'";
+		if($_SESSION['username'] == "admin"){
+			//don't do this next part if admin
+		}
+		else{
+			$user = $_SESSION['username'];
+			$query = "SELECT current_time_slot FROM users WHERE 
+					username = '$user'";
+					
+			$result = mysql_query($query) or die (mysql_error());
+			if ($row = mysql_fetch_array($result)){
+				//automatically display the currently reserved spot
+				//for a logged in user if they have reserved one
+				$current = $row['current_time_slot'];
+				$parse = explode(",", $current);
 				
-		$result = mysql_query($query) or die (mysql_error());
-		if ($row = mysql_fetch_array($result)){
-			//automatically display the currently reserved spot
-			//for a logged in user if they have reserved one
-			$current = $row['current_time_slot'];
-			$parse = explode(",", $current);
-			
-			$spot = $parse[0];
-			$troop_take = $parse[1];
-			$location = $parse[2];
-			$day = $parse[3];
-			
-			echo " <h3>Current Time Slot: ";
-			
-			//switch statement that displays the reserved location
-			//in a pre-formatted manner
-			switch ($spot) {
-				case "time1":
-					echo "9:00 AM on ";
-					echo "$day at $location. </h3>";
-					break;
-				case "time2":
-					echo "11:00 AM on ";
-					echo "$day at $location. </h3>";
-					break;
-				case "time3":
-					echo "1:00 PM on ";
-					echo "$day at $location. </h3>";
-					break;
-				case "time4":
-					echo "3:00 PM on ";
-					echo "$day at $location. </h3>";
-					break;
-				case "time5":
-					echo "5:00 PM on ";
-					echo "$day at $location. </h3>";
-					break;
-				default:
-					echo "No time has been reserved for this user.";
+				$spot = $parse[0];
+				$troop_take = $parse[1];
+				$location = $parse[2];
+				$day = $parse[3];
+				
+				echo " <h3>Current Time Slot: ";
+				
+				//switch statement that displays the reserved location
+				//in a pre-formatted manner
+				switch ($spot) {
+					case "time1":
+						echo "9:00 AM on ";
+						echo "$day at $location. </h3>";
+						break;
+					case "time2":
+						echo "11:00 AM on ";
+						echo "$day at $location. </h3>";
+						break;
+					case "time3":
+						echo "1:00 PM on ";
+						echo "$day at $location. </h3>";
+						break;
+					case "time4":
+						echo "3:00 PM on ";
+						echo "$day at $location. </h3>";
+						break;
+					case "time5":
+						echo "5:00 PM on ";
+						echo "$day at $location. </h3>";
+						break;
+					default:
+						echo "No time has been reserved for this user.";
+				}
 			}
 		}
 	}

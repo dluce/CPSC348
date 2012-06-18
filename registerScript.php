@@ -13,8 +13,8 @@
 		empty($_POST['user']) && 
 		empty($_POST['pass1']) && 
 		empty($_POST['pass2'])) {
-		echo ("<p> All information is required. Please check and make 
-			sure you enter your info! </p>");
+		echo ("<h2> All information is required. Please check and make 
+			sure you enter your info! </h2>");
 		include ('htmlfooter.php');
 		exit();
 	} 
@@ -33,9 +33,9 @@
 					ORDER BY troop_number";
 		$result = mysql_query($query);
 		if($row = mysql_fetch_array($result)) {
-			echo ("<p> I'm sorry, but your troop has already registered. 
+			echo ("<h3> I'm sorry, but your troop has already registered. 
 				Troop number ". $troop . " is registered with the 
-				Scoutmaster " . $name . ".</p>");
+				Scoutmaster " . $row['scout_master_name'] . ".</h3>");
 			include ('htmlfooter.php');
 			exit();
 		} 

@@ -72,7 +72,7 @@
 	?>	
 		<h2>Login</h2>
 		<form method="post" action="login.php">
-		</p>
+		<p>
 			Enter Username: <input type="text" id="username" name="username" /><br /><br />
 			Password: <input type="password" id="password" name="password" /><br /><br />
 			<input type="submit" value="Login" name="submit" />

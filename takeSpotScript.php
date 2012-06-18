@@ -31,7 +31,8 @@
 			$location = $_POST['location_id'];
 			$reserve = $_SESSION['reserve'];
 			if (!empty($reserve)){ 
-				include ('htmlheader.php');
+echo "Session Reserve: " . $_SESSION['reserve'];			
+	include ('htmlheader.php');
 			?>
 				<h2>You have already reserved a spot for this week.</h2>
 				<h4> Only one spot per troop is allowed per week. </h4>

@@ -3,7 +3,7 @@
 	include ('htmlheader.php');
 	include('db_connect.php'); //db_connect has all the stuff for
 			//connection error messages
-
+	
 	//check to see if any of the fields are empty.
 	//if not, then continue processing request
 	if (empty($_POST['name']) && 
@@ -65,8 +65,9 @@
 							SHA('$pass'))"; // the SHA function hashes the password
 											//into a 40-character string.
 					$result = mysql_query($query) or die (mysql_error());
-					echo ("You are now registered to use the site. 
-							Please remember your Username and Password.");
+					echo ("<h3> Registration Successful </h3><br />
+							You are now registered to use the site. 
+							Click <a href=\"login.php\">here</a> to login.");
 				} else {
 					echo ("<p> Your password entries do not match.<br />" .
 						"Please re-type your password, and then double check. </p>");

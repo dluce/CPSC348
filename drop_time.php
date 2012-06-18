@@ -39,8 +39,10 @@
 				//If this happens, it is VERY BAD. Should NEVER happen.
 				//if it does, you will need to reset the database.
 				else{
-					echo "<p> We could not change the users table to reflect
-						the change in time slot. </p>";
+					echo "<h3> WARNING: We could not change the users table to reflect
+						the change in time slot. </h3><br />
+						To fix this, you will need to manually update
+						the user information from the MySQL Console.";
 				}
 			}
 		}

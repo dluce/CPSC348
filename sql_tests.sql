@@ -1,4 +1,4 @@
-UPDATE times SET time1=0, troop_number1 = 0
-				WHERE location_id = 
-					(SELECT id FROM locations WHERE name = 'Candyland')
-				AND day_of = 'Saturday';
+INSERT INTO times (location_id)
+			SELECT locations.id
+			FROM (SELECT id FROM locations WHERE name = '$new_loc') locations
+			WHERE 1=1;

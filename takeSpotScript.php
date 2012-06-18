@@ -29,16 +29,17 @@
 			$spot = $_POST['spot'];
 			$day = $_POST['day'];
 			$location = $_POST['location_id'];
+echo "Session reserve: " . $_SESSION['reserve']. "<br />";
 			$reserve = $_SESSION['reserve'];
 			if (!empty($reserve)){ 
 				include ('htmlheader.php');
-			?>
-				<h2>You have already reserved a spot for this week.</h2>
-				<h4> Only one spot per troop is allowed per week. </h4>
-				<p>You may drop your current spot automatically by clicking 
-				<a href="drop_time.php">here</a><br />
-				and then sign up for a different one.</p>
-			<?php
+			
+					echo "<h2>You have already reserved a spot for this week.</h2>
+						<h4> Only one spot per troop is allowed per week. </h4>
+						<p>You may drop your current spot automatically by clicking 
+						<a href=\"drop_time.php\">here</a><br />
+						and then sign up for a different one.</p>";
+			
 				include ('htmlfooter.php');
 				exit();
 			}

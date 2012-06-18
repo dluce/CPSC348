@@ -90,12 +90,14 @@
 		$query = "SELECT current_time_slot FROM users WHERE 
 				username = " . $_SESSION['username'] . 
 				" AND scout_master_name = " . $_SESSION['realname'];
+				
 		$result = mysql_query($query) or die (mysql_error());
 		if ($row = mysql_fetch_array($result)){
 			//automatically display the currently reserved spot
 			//for a logged in user if they have reserved one
-			string $current = $row['current_time_slot'];
-			array $parse = explode("," , $current);
+			$current = $row['current_time_slot'];
+			$parse = explode(",", $current);
+			
 			$spot = $parse[0];
 			$troop_take = $parse[1];
 			$location = $parse[2];
@@ -124,6 +126,7 @@
 				default:
 					echo "No time has been reserved for this user.";
 			}
+			
 			echo "$day at $location. </h3>";
 		}
 	}

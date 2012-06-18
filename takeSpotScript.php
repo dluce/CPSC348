@@ -24,12 +24,12 @@
 					slot.</h3>";
 				include ('htmlfooter.php');
 				exit();
-			}
+			} 
 			$spot = $_POST['spot'];
 			$day = $_POST['day'];
 			$location = $_POST['location_id'];
 			$reserve = $_SESSION['reserve'];
-			if ($reserve){ ?>
+			if (!empty($reserve)){ ?>
 				<h2>You have already reserved a spot for this week.</h2>
 				<h4> Only one spot per troop is allowed per week. </h4>
 				<p>You may drop your current spot automatically by clicking 

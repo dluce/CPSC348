@@ -24,12 +24,18 @@
 			$day = $_POST['day'];
 			$location = $_POST['location_id'];
 			$reserve = $_SESSION['reserve'];
-			if ($reserve){
-				echo "<h2>You have already reserved a spot for this week.</h2>
+			if ($reserve){ ?>
+				<h2>You have already reserved a spot for this week.</h2>
 				<p> Only one spot per troop is allowed per week. You may <br />
 				drop your current spot automatically by clicking 
 				<a href=\"drop_time.php\">here</a><br />
-				and then sign up for a different one.</p>";
+				and then sign up for a different one.</p>
+			<?php
+				echo "<p>Note: If you are getting this message erroneously 
+					(i.e. thelog header shows that you are not signed up for 
+					a location and you got this message anyways), screen capture
+					it and send it to the SysAdmin at pmoerman@mail.umw.edu
+					or dluce@mail.umw.edu to get it fixed.</p>";
 				include ('htmlfooter.php');
 				exit();
 			}

@@ -112,24 +112,27 @@
 			switch ($spot) {
 				case "time1":
 					echo "9:00 AM on ";
+					echo "$day at $location. </h3>";
 					break;
 				case "time2":
 					echo "11:00 AM on ";
+					echo "$day at $location. </h3>";
 					break;
 				case "time3":
 					echo "1:00 PM on ";
+					echo "$day at $location. </h3>";
 					break;
 				case "time4":
 					echo "3:00 PM on ";
+					echo "$day at $location. </h3>";
 					break;
 				case "time5":
 					echo "5:00 PM on ";
+					echo "$day at $location. </h3>";
 					break;
 				default:
 					echo "No time has been reserved for this user.";
 			}
-			
-			echo "$day at $location. </h3>";
 		}
 	}
 ?>

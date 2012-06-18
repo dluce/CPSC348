@@ -13,8 +13,8 @@
 		  
 		  <p> Scout Leaders may: <br />
 				- Sign up their troop for a time slot. <br /> <br />
-				- Revoke a time slot their troop is currently signed <br /> <br />
-					up for.
+				- Revoke a time slot their troop is currently signed
+					up for. <br /> <br />
 		  </p>
 		  
 		  <p> Everyone can: <br />

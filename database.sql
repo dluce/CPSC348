@@ -62,13 +62,13 @@ INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUE
 INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (5, 'Sunday', 0, 0, 0, 0, 0);
 */
 
-INTO times (location_id, day_of) VALUES (1, 'Saturday');
-INTO times (location_id, day_of) VALUES (2, 'Saturday');
-INTO times (location_id, day_of) VALUES (3, 'Saturday');
-INTO times (location_id, day_of) VALUES (4, 'Saturday');
-INTO times (location_id, day_of) VALUES (5, 'Saturday');
-INTO times (location_id, day_of) VALUES (1, 'Sunday');
-INTO times (location_id, day_of) VALUES (2, 'Sunday');
-INTO times (location_id, day_of) VALUES (3, 'Sunday');
-INTO times (location_id, day_of) VALUES (4, 'Sunday');
-INTO times (location_id, day_of) VALUES (5, 'Sunday');
+INSERT INTO times (location_id, day_of) VALUES (1, 'Saturday');
+INSERT INTO times (location_id, day_of) VALUES (2, 'Saturday');
+INSERT INTO times (location_id, day_of) VALUES (3, 'Saturday');
+INSERT INTO times (location_id, day_of) VALUES (4, 'Saturday');
+INSERT INTO times (location_id, day_of) VALUES (5, 'Saturday');
+INSERT INTO times (location_id, day_of) VALUES (1, 'Sunday');
+INSERT INTO times (location_id, day_of) VALUES (2, 'Sunday');
+INSERT INTO times (location_id, day_of) VALUES (3, 'Sunday');
+INSERT INTO times (location_id, day_of) VALUES (4, 'Sunday');
+INSERT INTO times (location_id, day_of) VALUES (5, 'Sunday');

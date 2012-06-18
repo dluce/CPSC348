@@ -53,9 +53,9 @@ echo "$tr_num <br />";
 				&& $password==$_SESSION['pass']) {
 				
 				$troop_num = $_SESSION['troop'];
-				$query = "UPDATE times SET $spot = 1, 
-							$troop_take = '$troop_num' 
-							WHERE location_id = '$location' 
+				$query = "UPDATE times SET $spot = 1, $troop_take = '$troop_num' 
+							WHERE location_id = 
+							(SELECT id FROM locations WHERE name = '$location')
 							AND day_of = '$day'";
 echo "$query <br />";							
 				$result = mysql_query($query) or die (mysql_error());

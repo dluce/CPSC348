@@ -47,8 +47,8 @@
 			&& $password==$_SESSION['pass']) {
 
 			$query = "UPDATE times SET $spot=1, 
-						$troop_take = " . $_SESSION['troop'] .
-					"WHERE location_id = '$location' AND day_of = '$day'"
+						$troop_take = '" . $_SESSION['troop'] .
+					"' WHERE location_id = '$location' AND day_of = '$day'"
 			$result = mysql_query($query);
 			if ($result) {
 				//set the current_time_slot for the user who reserved it
@@ -56,7 +56,7 @@
 				//the string
 				$query = "UPDATE users SET current_time_slot = 
 					'$spot,$troop_take,$location,$day' WHERE 
-					username = " . $_SESSION['username'];
+					username = '" . $_SESSION['username'] . "'";
 				
 				$result = mysql_query($query) or die (mysql_error());
 				if($result){

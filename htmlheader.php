@@ -88,8 +88,8 @@
 		echo "		<h3>Current User: " . $_SESSION['realname'] . "</h3>";
 		
 		$query = "SELECT current_time_slot FROM users WHERE 
-				username = " . $_SESSION['username'] . 
-				" AND scout_master_name = " . $_SESSION['realname'];
+				username = '" . $_SESSION['username'] . 
+				"' AND scout_master_name = '" . $_SESSION['realname'] . "'";
 				
 		$result = mysql_query($query) or die (mysql_error());
 		if ($row = mysql_fetch_array($result)){

@@ -103,7 +103,8 @@
 					username = '$user'";
 					
 			$result = mysql_query($query) or die (mysql_error());
-			if ($row = mysql_fetch_array($result)){
+			$row = mysql_fetch_array($result);
+			if (!empty($row[0])){
 				//automatically display the currently reserved spot
 				//for a logged in user if they have reserved one
 				$current = $row['current_time_slot'];
@@ -150,5 +151,11 @@
 			}
 		}
 	}
+//	$user = $_SESSION['username'];
+//	$query = "SELECT current_time_slot FROM users WHERE username = '$user'";
+	
+//	$result = mysql_query($query) or die (mysql_error());
+//	$row = mysql_fetch_array($result);
+
 	echo "<br />";
 ?>

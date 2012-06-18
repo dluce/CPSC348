@@ -1,6 +1,6 @@
 <?php
 	//This is the script file, used to verify the user's identity
-	include ('htmlheader.php');
+
 	include ('db_connect.php');
 	//contains all information for connecting to the database
 	//including error messages
@@ -8,7 +8,7 @@
 		|| empty($_POST['phone'])
 		|| empty($_POST['name'])
 		|| empty($_POST['password'])) {
-		
+		include ('htmlheader.php');
 		echo "<h2> All information is required! </h2>
 			<h3> Back up and try again.</h3>";
 		include ('htmlfooter.php');
@@ -20,6 +20,7 @@
 		if(isset($_SESSION['username'])){
 			//if they are, AND they aren't the Admin, continue
 			if ($_SESSION['username'] == "admin"){
+				include ('htmlheader.php');
 				echo "<h3>Admin account cannot sign up for a time 
 					slot.</h3>";
 				include ('htmlfooter.php');
@@ -29,7 +30,9 @@
 			$day = $_POST['day'];
 			$location = $_POST['location_id'];
 			$reserve = $_SESSION['reserve'];
-			if (!empty($reserve)){ ?>
+			if (!empty($reserve)){ 
+				include ('htmlheader.php');
+			?>
 				<h2>You have already reserved a spot for this week.</h2>
 				<h4> Only one spot per troop is allowed per week. </h4>
 				<p>You may drop your current spot automatically by clicking 
@@ -72,18 +75,20 @@
 						username = '$username'";
 					$result = mysql_query($query) or die (mysql_error());
 					if($result){
-						echo "<h2>You have successfully reserved the timeslot.</h2>";
 						//assign session variable here to keep them from
 						//signing up more than once per session. If they
 						//registered for a spot the last time they
 						//were at the site, the code should not get to this point
 						$_SESSION['reserve'] = "$spot,$troop_take,$location,$day";
+						include ('htmlheader.php');
+						echo "<h2>You have successfully reserved the timeslot.</h2>";
 					}
 				}
 			}
 		}
 		//if they're not logged in, quit out
 		else{
+			include ('htmlheader.php');
 			echo "<h2>You must be logged in to claim a cookie booth.</h2>
 				<h3>Either register <a href=\"register.php\">here</a> or 
 				login <a href=\"login.php\">here</a> to do so.</h3>";

@@ -32,13 +32,14 @@
 				//if update statement worked, change the users table to reflect
 				//the loss in spot reservation, and print out a success message
 				if($result){
-					$query = "UPDATE users SET current_time_slot = ''
+					$query = "UPDATE users SET current_time_slot = NULL
 						WHERE username = '$user'";
 					
 					$result = mysql_query($query) or die (mysql_error());
 					if($result){
 						echo "<h2>You have successfully dropped your time slot. </h2><br />
 							<h3>Feel free to choose another. </h3>";
+						unset($_SESSION['reserve']);
 					}
 					//If this happens, it is VERY BAD. Should NEVER happen.
 					//if it does, you will need to reset the database.

@@ -106,19 +106,19 @@
 			//note: this switch statement should NEVER get to the 
 			//default statement. If it does, then something is wrong.
 			switch ($spot) {
-				case time1:
+				case "time1":
 					echo "9:00 AM on ";
 					break;
-				case time2:
+				case "time2":
 					echo "11:00 AM on ";
 					break;
-				case time3:
+				case "time3":
 					echo "1:00 PM on ";
 					break;
-				case time4:
+				case "time4":
 					echo "3:00 PM on ";
 					break;
-				case time5:
+				case "time5":
 					echo "5:00 PM on ";
 					break;
 				default:

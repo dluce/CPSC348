@@ -28,6 +28,7 @@
 	echo "		<div id=\"menu\">";
 	echo "			<ul>";
 	echo "				<li class=\"menuitem\"><a href=\"index.php\">Home</a></li>";
+	echo "				<li class=\"menuitem\"><a href=\"add_location.php\">Add a Location</a></li>";
 	echo "				<li class=\"menuitem\"><a href=\"register.php\">Sign-Up Sheet</a></li>";
 	echo "				<li class=\"menuitem\"><a href=\"http://www.girlscouts.org\">Girl Scouts</a></li>";
 	

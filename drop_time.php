@@ -33,14 +33,14 @@
 				
 				$result = mysql_query($query) or die (mysql_error());
 				if($result){
-					echo "<p>You have successfully dropped your time slot. <br />
-						Feel free to choose another. </p>";
+					echo "<h2>You have successfully dropped your time slot. </h2><br />
+						<h3>Feel free to choose another. </h3>";
 				}
 				//If this happens, it is VERY BAD. Should NEVER happen.
 				//if it does, you will need to reset the database.
 				else{
-					echo "<h3> WARNING: We could not change the users table to reflect
-						the change in time slot. </h3><br />
+					echo "<h2> WARNING: We could not change the users table to reflect
+						the change in time slot. </h2><br />
 						To fix this, you will need to manually update
 						the user information from the MySQL Console.";
 				}

@@ -49,6 +49,7 @@ INSERT INTO locations (name) VALUES ('1701 College Avenue');
 
 /*initializes the 'times' table to have all parts of the schedule free */
 /* in all locations, and two days for each location. */
+/*
 INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (1, 'Saturday', 0, 0, 0, 0, 0);
 INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (2, 'Saturday', 0, 0, 0, 0, 0);
 INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (3, 'Saturday', 0, 0, 0, 0, 0);
@@ -59,3 +60,15 @@ INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUE
 INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (3, 'Sunday', 0, 0, 0, 0, 0);
 INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (4, 'Sunday', 0, 0, 0, 0, 0);
 INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (5, 'Sunday', 0, 0, 0, 0, 0);
+*/
+
+INTO times (location_id, day_of) VALUES (1, 'Saturday');
+INTO times (location_id, day_of) VALUES (2, 'Saturday');
+INTO times (location_id, day_of) VALUES (3, 'Saturday');
+INTO times (location_id, day_of) VALUES (4, 'Saturday');
+INTO times (location_id, day_of) VALUES (5, 'Saturday');
+INTO times (location_id, day_of) VALUES (1, 'Sunday');
+INTO times (location_id, day_of) VALUES (2, 'Sunday');
+INTO times (location_id, day_of) VALUES (3, 'Sunday');
+INTO times (location_id, day_of) VALUES (4, 'Sunday');
+INTO times (location_id, day_of) VALUES (5, 'Sunday');

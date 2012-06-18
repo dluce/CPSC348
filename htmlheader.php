@@ -13,6 +13,8 @@
 	echo "<head>";
 	echo "	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\" />";
 	echo "	<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />";
+	
+	//added a favicon
 	echo "	<link rel=\"shortcut icon\" href=\"images/favicon.ico\" />";
 	echo "	<title>Fredericksburg Sign-Up (Girl Scouts)</title>";
 	echo "</head>";
@@ -24,7 +26,8 @@
 	echo "			<h2>Girl Scout Cookie Booth Locations</h2>";
 	
 	echo "		</div>   ";
-		
+	
+	//menu buttons along the top
 	echo "		<div id=\"menu\">";
 	echo "			<ul>";
 	echo "				<li class=\"menuitem\"><a href=\"index.php\">Home</a></li>";
@@ -86,7 +89,7 @@
 	
 	//session header if someone is logged in
 	if(isset($_SESSION['username'])){
-		echo "		<h3>Current User: " . $_SESSION['realname'] . "</h3>";
+		echo "		<h3>Logged In As: " . $_SESSION['realname'] . "</h3>";
 		
 		$user = $_SESSION['username'];
 		$realn = $_SESSION['realname'];
@@ -108,8 +111,8 @@
 			
 			echo " <h3>Current Time Slot: ";
 			
-			//note: this switch statement should NEVER get to the 
-			//default statement. If it does, then something is wrong.
+			//switch statement that displays the reserved location
+			//in a pre-formatted manner
 			switch ($spot) {
 				case "time1":
 					echo "9:00 AM on ";

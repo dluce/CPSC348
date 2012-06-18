@@ -38,7 +38,9 @@ CREATE TABLE times(
 	REFERENCES locations(id)
 );
 
-
+/*puts an admin account in the users table */
+INSERT INTO users VALUES (0, 'Administrator', '7033400810', 'dluce@mail.umw.edu', 
+	'admin', SHA('gurren5'), '');
 /* puts the locations into the 'locations' table */
 INSERT INTO locations (name) VALUES ('Candyland');
 INSERT INTO locations (name) VALUES ('Mordor');
@@ -47,21 +49,7 @@ INSERT INTO locations (name) VALUES ('Atlantis');
 INSERT INTO locations (name) VALUES ('1701 College Avenue');
 
 
-/*initializes the 'times' table to have all parts of the schedule free */
-/* in all locations, and two days for each location. */
-/*
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (1, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (2, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (3, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (4, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (5, 'Saturday', 0, 0, 0, 0, 0);
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (1, 'Sunday', 0, 0, 0, 0, 0);
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (2, 'Sunday', 0, 0, 0, 0, 0);
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (3, 'Sunday', 0, 0, 0, 0, 0);
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (4, 'Sunday', 0, 0, 0, 0, 0);
-INSERT INTO times (location_id, day_of, time1, time2, time3, time4, time5) VALUES (5, 'Sunday', 0, 0, 0, 0, 0);
-*/
-
+/*initializes the 'times' table with two days for each preset location. */
 INSERT INTO times (location_id, day_of) VALUES (1, 'Saturday');
 INSERT INTO times (location_id, day_of) VALUES (2, 'Saturday');
 INSERT INTO times (location_id, day_of) VALUES (3, 'Saturday');

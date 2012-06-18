@@ -11,7 +11,7 @@
 	<br />
 	<br />
 	<p> Click the button below to reset your password in case you forgot it. <br /><br />
-		<a href="lostPassForm.php"><img src="http://www.wsalometutoring.com/images/forget_img.jpg" alt="Recover your password">
+		<a href="lostPassForm.php"><img id = "small" src="http://www.wsalometutoring.com/images/forget_img.jpg" alt="Recover your password">
 			</img></a>
 	</p>		
 <?php

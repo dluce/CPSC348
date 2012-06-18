@@ -21,6 +21,8 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 			size="3" maxlength="4" /><br /><br />
 		Password: <input type="password" name="password" 
 			maxlength="22" /><br /> <br />
+		
+		<!-- carry over all the spot information to the next page -->
 		<input type="hidden" name = "spot" 
 			value="<?php echo "$spot"; ?>" />
 		<input type="hidden" name="day" 

@@ -65,6 +65,7 @@
 				or sign up <a href=\"register.php\" >here.</a> 
 				</p>";
 			include ('htmlfooter.php');
+			exit();
 		}
 	}
 	else {

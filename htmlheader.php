@@ -86,5 +86,45 @@
 	//session header if someone is logged in
 	if(isset($_SESSION['username'])){
 		echo "		<h3>Current User: " . $_SESSION['realname'] . "</h3>";
+		
+		$query = "SELECT current_time_slot FROM users WHERE 
+				username = " . $_SESSION['username'] . 
+				" AND scout_master_name = " . $_SESSION['realname'];
+		$result = mysql_query($query) or die (mysql_error());
+		if ($row = mysql_fetch_array($result)){
+			//automatically display the currently reserved spot
+			//for a logged in user if they have reserved one
+			string $current = $row['current_time_slot'];
+			array $parse = explode("," , $current);
+			$spot = $parse[0];
+			$troop_take = $parse[1];
+			$location = $parse[2];
+			$day = $parse[3];
+			
+			echo " <h3>Current Time Slot: ";
+			
+			//note: this switch statement should NEVER get to the 
+			//default statement. If it does, then something is wrong.
+			switch ($spot) {
+				case time1:
+					echo "9:00 AM on ";
+					break;
+				case time2:
+					echo "11:00 AM on ";
+					break;
+				case time3:
+					echo "1:00 PM on ";
+					break;
+				case time4:
+					echo "3:00 PM on ";
+					break;
+				case time5:
+					echo "5:00 PM on ";
+					break;
+				default:
+					echo "No time has been reserved for this user.";
+			}
+			echo "$day at $location. </h3>";
+		}
 	}
 ?>

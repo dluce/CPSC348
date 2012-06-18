@@ -23,7 +23,7 @@
 			//if they are, continue
 			$spot = $_POST['spot'];
 			$day = $_POST['day'];
-			$location = $_GET['location'];
+			$location = $_POST['location_id'];
 			
 			$reserve = $_SESSION['reserve'];
 			if ($reserve){
@@ -52,7 +52,11 @@
 			$result = mysql_query($query);
 			if ($result) {
 				//set the current_time_slot for the user who reserved it
-				$query = "UPDATE users SET current_time_slot = 1";
+				//allows for later dropping of the time slot by parsing
+				//the string
+				$query = "UPDATE users SET current_time_slot = 
+					'$spot,$troop_take,$location,$day' WHERE 
+					username = " . $_SESSION['username'];
 				
 				$result = mysql_query($query) or die (mysql_error());
 				if($result){

@@ -8,7 +8,7 @@ CREATE TABLE users (
 	email VARCHAR(30) NOT NULL,
 	username VARCHAR(30) NOT NULL,
 	password VARCHAR(40) NOT NULL,
-	current_time_slot VARCHAR(80)
+	current_time_slot VARCHAR(80) DEFAULT ''
 );
 
 DROP TABLE IF EXISTS locations;

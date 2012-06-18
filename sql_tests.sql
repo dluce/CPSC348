@@ -1,6 +1,4 @@
-SELECT t.day_of AS day, t.time1, t.time2, t.time3, t.time4, 
-			t.time5
-			FROM times AS t
-			INNER JOIN locations AS l
-			ON l.id = t.location_id
-			WHERE l.name = 'RuneScape';
+UPDATE times SET time1=0, troop_number1 = 0
+				WHERE location_id = 
+					(SELECT id FROM locations WHERE name = 'Candyland')
+				AND day_of = 'Saturday';

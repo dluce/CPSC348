@@ -9,8 +9,8 @@
 		|| empty($_POST['name'])
 		|| empty($_POST['password'])) {
 		
-		echo "<p> All information is required! <br />
-				Back up and try again.</p>";
+		echo "<h2> All information is required! </h2>
+			<h3> Back up and try again.</h3>";
 		include ('htmlfooter.php');
 		exit();
 	}
@@ -25,9 +25,10 @@
 			$location = $_POST['location_id'];
 			$reserve = $_SESSION['reserve'];
 			if ($reserve){
-				echo "<h2>You have already reserved a spot for this week. <br />
-				Only one spot per troop is allowed per week. You may <br />
-				drop your current spot automatically by clicking <a href=\"drop_time.php\">here</a><br />
+				echo "<h2>You have already reserved a spot for this week.</h2>
+				<p> Only one spot per troop is allowed per week. You may <br />
+				drop your current spot automatically by clicking 
+				<a href=\"drop_time.php\">here</a><br />
 				and then sign up for a different one.</p>";
 				include ('htmlfooter.php');
 				exit();
@@ -77,9 +78,9 @@
 		}
 		//if they're not logged in, quit out
 		else{
-			echo "<p>You must be logged in to claim a cookie booth. <br>
-				Either register <a href=\"register.php\">here</a> or 
-				login <a href=\"login.php\">here</a> to do so.</p>";
+			echo "<h2>You must be logged in to claim a cookie booth.</h2>
+				<h3>Either register <a href=\"register.php\">here</a> or 
+				login <a href=\"login.php\">here</a> to do so.</h3>";
 			include('htmlfooter.php');
 			exit();
 		}

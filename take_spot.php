@@ -12,7 +12,7 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 		and logged in, and confirm the time slot. Only one time slot per troop
 		is allowed.</h3>
 	<form id="myform" method="post" action="takeSpotScript.php">
-
+	<p>
 		User Name: <input type="text" name="name"
 			 maxlength="38" /> <br /><br />
 		Phone Number: <input type="text" name="phone" size="9"
@@ -31,6 +31,7 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 			value="<?php echo "$location"; ?>" />
 			
 		<input type="submit" name="submit" value = "Take Time Slot" /><br /><br />
+	</p>
 	</form>
 	<p> PLEASE use the SAME information you used to register,
 		 or you will not be allowed to obtain the time slot. </p>

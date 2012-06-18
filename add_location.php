@@ -1,8 +1,8 @@
 <?php
 	//if the user already input information, run the script
-	include ('db_connect.php');
 	if(isset($_POST['new_loc']) && !empty($_POST['new_loc'])){
 		//put the new location in the locations table
+		include ('db_connect.php');
 		$new_loc = $_POST['new_loc'];
 		$query = "INSERT INTO locations (name) VALUES ('$new_loc')";
 		
@@ -24,6 +24,17 @@
 			$query = "INSERT INTO times (location_id, day_of) VALUES
 				('$id', 'Sunday')";
 			$result = mysql_query($query) or die (mysql_error());
+			
+			//successful adding means display the page as normal and
+			//then exit so the code below is not executed
+			include ('htmlheader.php');
+			?>
+			<h3>Location successfully added! </h3><br />
+			<h4>It should now be visible to the left under the 
+				"locations" tab. </h4>
+		<?php
+			include ('htmlfooter.php');
+			exit();
 		}
 		else{
 			include ('htmlheader.php');
@@ -37,7 +48,7 @@
 	//otherwise, display page as normal
 	include ('htmlheader.php');
 	
-	if(isset($_SESSION['username']){
+	if(isset($_SESSION['username'])){
 	?>
 	<h2> Add a Location </h2><br />
 	<h3> Simply enter a name and it will be added to the database. </h3><br />

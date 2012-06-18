@@ -1,13 +1,12 @@
-<!-- take_spot.php
-This form is used to sign-up for a time slot for a cookie booth at the selected location.
--->
 <?php
 	include ('htmlheader.php');
 	$spot = $_GET['spot'];
 	$day = $_GET['day'];
 	$location = $_GET['location'];
 ?>
-
+<!-- take_spot.php
+This form is used to sign-up for a time slot for a cookie booth at the selected location.
+-->
 	<h2> Time Slot Verification </h2>
 	<h3> Please enter the information below to verify you are registered 
 		and logged in, and confirm the time slot. Only one time slot per troop

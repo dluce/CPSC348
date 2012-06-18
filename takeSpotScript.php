@@ -23,7 +23,7 @@
 			$spot = $_POST['spot'];
 			$day = $_POST['day'];
 			$location = $_POST['location_id'];
-echo "$spot, $day, $location <br />";			
+//echo "$spot, $day, $location <br />";			
 			$reserve = $_SESSION['reserve'];
 			if ($reserve){
 				echo "<h2>You have already reserved a spot for this week. <br />
@@ -37,9 +37,8 @@ echo "$spot, $day, $location <br />";
 			//parse out the slot(x) number to add the troop
 			//to the corresponding troop_number(x) column.
 			$tr_num = substr($spot, 4);
-echo "$tr_num <br />";
+//echo "$tr_num <br />";
 			$troop_take = "troop_number" . $tr_num;
-			echo "$troop_take";
 			
 			//check to see if everything matches up
 			$name = $_POST['name'];
@@ -57,21 +56,26 @@ echo "$tr_num <br />";
 							WHERE location_id = 
 							(SELECT id FROM locations WHERE name = '$location')
 							AND day_of = '$day'";
-echo "$query <br />";							
+//echo "$query <br />";							
 				$result = mysql_query($query) or die (mysql_error());
 				if ($result) {
 					//set the current_time_slot for the user who reserved it
 					//allows for later dropping of the time slot by parsing
 					//the string
-echo "$result <br />";					
+//echo "$result <br />";					
 					$username = $_SESSION['username'];
 					$query = "UPDATE users SET current_time_slot = 
 						'$spot,$troop_take,$location,$day' WHERE 
 						username = '$username'";
-echo "$query <br />";					
+//echo "$query <br />";					
 					$result = mysql_query($query) or die (mysql_error());
 					if($result){
-						echo "You have successfully reserved the timeslot.";
+						echo "<h2>You have successfully reserved the timeslot.</h2>";
+						//assign session variable here to keep them from
+						//signing up more than once per session. If they
+						//registered for a spot the last time they
+						//were at the site, the code should not get to this point
+						$_SESSION['reserve'] = "$spot,$troop_take,$location,$day";
 					}
 				}
 			}

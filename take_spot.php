@@ -29,6 +29,7 @@ This form is used to sign-up for a time slot for a cookie booth at the selected 
 			value="<?php echo "$day"; ?>" />
 		<input type="hidden" name = "location_id" 
 			value="<?php echo "$location"; ?>" />
+			
 		<input type="submit" name="submit" value = "Take Time Slot" /><br /><br />
 	</form>
 	<p> PLEASE use the SAME information you used to register,
